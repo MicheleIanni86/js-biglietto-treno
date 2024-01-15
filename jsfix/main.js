@@ -10,7 +10,7 @@ const age = parseInt(prompt('Quanti anni hai?'));
 console.log('km inseriti dall\'utente', age);
 
 // Calcolo il prezzo del viaggio in base alla tariffa
-const partialPrice = km * 0.21;
+const basePrice = km * 0.21;
 
 
 let finalPrice;
@@ -18,7 +18,7 @@ let finalPrice;
 
 // Applico lo sconto del 20% sul totale
 if (age < 18) {
-    let price = partialPrice;
+    let price = basePrice;
     const discountPerc = 20;
     const discount = price * discountPerc / 100;
     finalPrice = price - discount;
@@ -27,14 +27,14 @@ if (age < 18) {
 
     // Applico lo sconto del 40% sul totale
     if (age > 65) {
-        let price = partialPrice;
+        let price = basePrice;
         const discountPerc = 40;
         const discount = price * discountPerc / 100;
         finalPrice = price - discount;
 
     } else {
         // Non applico nessuno sconto
-        finalPrice = partialPrice;
+        finalPrice = basePrice;
 
     }
 
